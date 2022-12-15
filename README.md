@@ -1,42 +1,52 @@
-# DCA: Práctica 9.
-## David Bernabeu Ferrer
+# DCA: Práctica 9 - Git.
 
-Para el alias local: git config --local alias.lg "log --oneline --decorate --graph"
-Para el alias global: git config --global alias.st "status"
+### Apartado 1. Crear cuenta de GitHub.
+Cuenta de GitHub creada, la cuenta es la siguiente: https://github.com/dvddepennde
 
+### Apartado 2. Creación de alias locales y globales.
 
-Hacemos variso commits, introducimos fallo,
-hacemos mas commits.
-$ git bisect start
-$ git bisect good 7c8b38e
-$ git bisect bad 6b0c0e9
-$ git bisect bad
-$ git bisect bad
+Vamos a crear el alias *lg* con el que sacaremos los logs, para esto, hacemos:  
 
-C:\Users\david\Documents\Universidad\DCA\Practica\Practica9>git bisect bad 6b0c0e9
-Bisecting: 1 revision left to test after this (roughly 1 step)
-[7a9803a0866d8db7a5d0afc7742e48f33e9e4b70] Seguimos desarrollando...
+```shell
+git config --local alias.lg "log --oneline --decorate --graph"
+```
 
-C:\Users\david\Documents\Universidad\DCA\Practica\Practica9>git status
-HEAD detached at 7a9803a
-You are currently bisecting, started from branch 'master'.
-  (use "git bisect reset" to get back to the original branch)
+El cual nos sacará el siguiente mensaje: 
 
-nothing to commit, working tree clean
+![](./1_1.png)
 
-C:\Users\david\Documents\Universidad\DCA\Practica\Practica9>git bisect bad
+Para crear el alias global status, ejecutamos:
 
-0f3c2fcafccba3248d0dec1bf9a77242bd474139 is the first bad commit
-commit 0f3c2fcafccba3248d0dec1bf9a77242bd474139
-Author: David Bernabeu Ferrer <71643167+dvddepennde@users.noreply.github.com>
-Date:   Thu Dec 15 16:46:35 2022 +0100
+```shell
+git config --global alias.st "status"
+```
 
-    Añadimos fallo
+y si ejecutamos:
+```shell
+git st
+```
+### Uso de git bisect
 
- hola.py | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+Para esto, hacemos varios commits, introducimos un fallo y a posteriori hacemos mas commits.
 
+```shell
+git bisect start
+git bisect good 7c8b38e
+git bisect bad 6b0c0e9
+git bisect bad
+git bisect bad
+```
+
+Y a posteriri, nos saldrá un mensaje por consola como el siguiente: 
+
+![](./badbisect.png)
 
  ## Hooks
- Uso del pre-commit
+ He activado el hook pre-commit que viene de ejemplo, el cual no permite subir archivos que tengan carácteres no ASCII, por ejemplo, las tildes.
+ 
+ En caso de intentar subir un archivo con caracter no ASCII, el mensaje será el siguiente:
+
  ![](./foto.png)
+
+
+## David Bernabeu Ferrer - 29577349Q
