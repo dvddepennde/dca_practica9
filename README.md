@@ -3,6 +3,7 @@
 ### Apartado 1. Crear cuenta de GitHub.
 Cuenta de GitHub creada, la cuenta es la siguiente: https://github.com/dvddepennde
 
+Enlace a github de la práctica: https://github.com/dvddepennde/dca_practica9
 ### Apartado 2. Creación de alias locales y globales.
 
 Vamos a crear el alias *lg* con el que sacaremos los logs, para esto, hacemos:  
@@ -37,7 +38,7 @@ git bisect bad
 git bisect bad
 ```
 
-Y a posteriri, nos saldrá un mensaje por consola como el siguiente: 
+Y a posteriori, nos saldrá un mensaje por consola como el siguiente:
 
 ![](./badbisect.png)
 
@@ -48,5 +49,8 @@ Y a posteriri, nos saldrá un mensaje por consola como el siguiente:
 
  ![](./foto.png)
 
+Además, tambien verifica que no hayan espacios en planco antes de un salto de línea, por ejemplo, sacaría el siguiente mensaje:
+
+ ![](./foto2.png)
 
 ## David Bernabeu Ferrer - 29577349Q
