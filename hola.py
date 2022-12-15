@@ -1,4 +1,5 @@
-if(True):
+import random
+if(random.choice([0,1])):
     print("hola")
     print("Otra nueva feature")
 else:
